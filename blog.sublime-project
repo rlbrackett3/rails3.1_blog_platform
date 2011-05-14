@@ -1,0 +1,286 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"field",
+				"fields"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/robert/Dropbox/Sites/blog/.rvmrc",
+			"settings":
+			{
+				"buffer_size": 23,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"file_history":
+	[
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/02_master.sass",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/01_include.sass",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/_right_column_info.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/projects/_form.html.haml",
+		"/home/robert/Dropbox/LCRB/ffflourish/05_Railsapps/ffflourish/app/views/profile/_form_base_stats.html.erb",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/_slideshow.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/_slideshow_index.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/images/_image_slide.html.haml",
+		"/home/robert/Dropbox/Sites/dn/public/javascripts/application.js",
+		"/home/robert/Dropbox/Sites/dn/app/views/images/show.js.haml",
+		"/home/robert/.config/sublime-text-2/Packages/Default/Global.sublime-settings",
+		"/home/robert/.config/sublime-text-2/Packages/User/Base File.sublime-settings",
+		"/home/robert/.config/sublime-text-2/Packages/User/Global.sublime-settings",
+		"/home/robert/Dropbox/LCRB/ffflourish/05_Railsapps/ffflourish/app/views/comments/index.js.erb",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/_right_column.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/pages/bio.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/controllers/application_controller.rb",
+		"/home/robert/Dropbox/Sites/dn/app/helpers/application_helper.rb",
+		"/home/robert/Dropbox/Sites/dn/app/controllers/images_controller.rb",
+		"/home/robert/Dropbox/Sites/dn/app/views/images/show.html.haml",
+		"/home/robert/Dropbox/Sites/dn/config/routes.rb",
+		"/home/robert/Dropbox/Sites/dn/app/models/image.rb",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/x_slideshow.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/images/index.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/projects/index.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/projects/_gallery_projects.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/_gallery_images.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/projects/show.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/portfolios/_slideshow.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/uploaders/image_uploader.rb",
+		"/home/robert/Dropbox/Sites/dn/app/controllers/portfolios_controller.rb",
+		"/home/robert/Dropbox/Sites/dn/app/models/project.rb",
+		"/home/robert/Dropbox/Sites/dn/app/controllers/projects_controller.rb",
+		"/home/robert/Dropbox/Sites/dn/app/views/images/_form.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/portfolios/index.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/_slideshow_project.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/slideshow_index.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/portfolios/show.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/pages/home.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/pages/services.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/pages/contact.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/layouts/_nav.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/layouts/_footer.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/controllers/pages_controller.rb",
+		"/home/robert/Dropbox/Sites/dn/public/bio.txt",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/_gallery_projects.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/layouts/_head.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/images/edit.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/models/post.rb",
+		"/home/robert/Dropbox/Sites/dn/app/models/portfolio.rb",
+		"/home/robert/Dropbox/Sites/dn/db/migrate/20110509165139_change_descriptions_to_text.rb",
+		"/home/robert/Dropbox/Sites/dn/app/views/pages/tutorials.html.haml",
+		"/home/robert/Dropbox/LCRB/ffflourish/05_Railsapps/ffflourish/app/views/layouts/_head.html.erb",
+		"/home/robert/Dropbox/Sites/dn/public/javascripts/vendor/uploadify/jquery.uploadify.js",
+		"/home/robert/Dropbox/Sites/dn/public/javascripts/vendor/uploadify/uploadify.php",
+		"/home/robert/Dropbox/Sites/dn/public/javascripts/vendor/jquery.uploadify-v3.0.0/uploadify.css",
+		"/home/robert/Dropbox/Sites/dn/Gemfile",
+		"/home/robert/Dropbox/Sites/dn/config/application.rb",
+		"/home/robert/Dropbox/Sites/dn/config/app_config.yml",
+		"/home/robert/Dropbox/Sites/dn/config/boot.rb",
+		"/home/robert/Dropbox/Sites/dn/app/views/images/new.html.haml",
+		"/home/robert/Dropbox/Sites/dn/lib/include/flash_session_cookie_middleware.rb",
+		"/home/robert/Dropbox/Sites/dn/Rakefile",
+		"/home/robert/Dropbox/Sites/dn/config/initializers/carrierwave.rb",
+		"/home/robert/Dropbox/Sites/dn/app/views/pages/bio.html.erb",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/reset/reset.css",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/03_admin.sass",
+		"/home/robert/Dropbox/Sites/dn/app/views/portfolios/_form.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/portfolios/edit.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/portfolios/new.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/projects/edit.html.haml",
+		"/home/robert/Dropbox/Sites/dn/app/views/projects/new.html.haml",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/04_support.sass",
+		"/home/robert/Dropbox/Sites/dn/app/views/layouts/application.html.haml",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/reset/style.css",
+		"/home/robert/Dropbox/Sites/dn/app/views/kaminari/_paginator.html.haml",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/master.sass",
+		"/home/robert/.config/sublime-text-2/Packages/Default/Base File.sublime-settings",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/master.css",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/support.sass",
+		"/home/robert/Desktop/boilerplate/css/style.css",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/ie.css",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/reset.css",
+		"/home/robert/Dropbox/LCRB/ffflourish/05_Railsapps/ffflourish/app/views/layouts/_footer.html.erb",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/reset.sass",
+		"/home/robert/Dropbox/Sites/dn/public/robots.txt",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/dn_master.sass",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/dn_admin.sass",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/dn_support.sass",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/include.sass",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/blueprint/print.css",
+		"/home/robert/Dropbox/Sites/dn/app/views/layouts/_debug.html.haml",
+		"/home/robert/Dropbox/LCRB/ffflourish/05_Railsapps/ffflourish/config/heroku.yml",
+		"/home/robert/Dropbox/Sites/dn/config/heroku.yml",
+		"/home/robert/Dropbox/Sites/dn/config/xheroku.yml",
+		"/home/robert/Dropbox/LCRB/ffflourish/05_Railsapps/ffflourish/config/initializers/carrierwave.rb",
+		"/home/robert/Dropbox/LCRB/Indiefoods/02_Code/if_splash/config/heroku.yml",
+		"/home/robert/Dropbox/Sites/dn/db/migrate/20110428153220_add_portfolio_id_to_project.rb",
+		"/home/robert/Dropbox/Sites/dn/db/migrate/20110220060455_create_portfolios.rb",
+		"/home/robert/Dropbox/Sites/dn/db/migrate/20110422171752_remove_user_id_from_project.rb",
+		"/home/robert/Dropbox/Sites/dn/spec/models/project_spec.rb",
+		"/home/robert/Dropbox/Sites/dn/spec/models/image_spec.rb",
+		"/home/robert/Dropbox/Sites/dn/public/stylesheets/dn_master.css",
+		"/home/robert/Dropbox/Sites/dn/db/seeds.rb",
+		"/home/robert/Dropbox/Sites/dn/db/migrate/20110418185152_add_user_foreign_keys.rb",
+		"/home/robert/Dropbox/Sites/dn/app/models/user.rb",
+		"/home/robert/Dropbox/Sites/dn/app/controllers/users_controller.rb",
+		"/home/robert/Dropbox/Sites/dn/db/migrate/20110428142419_add_source_to_image.rb",
+		"/home/robert/Dropbox/Sites/dn/app/views/devise/shared/_links.erb",
+		"/home/robert/Dropbox/Sites/dn/app/views/devise/sessions/new.html.haml",
+		"/home/robert/.config/sublime-text-2/Packages/Default/rlb_Base File.sublime-settings",
+		"/home/robert/Dropbox/Sites/dn/app/views/devise/sessions/new.html.erb",
+		"/home/robert/Dropbox/Sites/dn/app/views/shared/_nested_form_sample.html.haml",
+		"/home/robert/Dropbox/Sites/dn/config/initializers/client_side_validations.rb",
+		"/home/robert/Dropbox/Sites/dn/public/javascripts/vendor/autoresize.jquery.min (White Space Conflict).js",
+		"/home/robert/Dropbox/Sites/dn/public/javascripts/vendor/autoresize.jquery.min.js ",
+		"/home/robert/Dropbox/rlb_sites/dn/app/models/portfolio.rb",
+		"/home/robert/Dropbox/rlb_sites/dn/app/models/project.rb",
+		"/home/robert/Dropbox/rlb_sites/dn/public/stylesheets/sass/dn_master.sass",
+		"/home/robert/Dropbox/rlb_sites/dn/public/stylesheets/sass/dn_admin.sass",
+		"/home/robert/Dropbox/rlb_sites/dn/public/stylesheets/sass/dn_support.sass",
+		"/home/robert/Dropbox/rlb_sites/dn/app/models/affiliation.rb",
+		"/home/robert/Dropbox/rlb_sites/dn/app/controllers/projects_controller.rb",
+		"/home/robert/Dropbox/rlb_sites/dn/app/controllers/images_controller.rb",
+		"/home/robert/Dropbox/rlb_sites/dn/app/views/projects/show.html.haml",
+		"/home/robert/Dropbox/rlb_sites/dn/app/views/shared/_right_column.html.haml",
+		"/home/robert/Dropbox/rlb_sites/dn/app/views/shared/_slideshow.html.haml",
+		"/home/robert/Dropbox/rlb_sites/dn/app/views/images/show.html.haml"
+	],
+	"find_in_files":
+	{
+		"include_history":
+		[
+		],
+		"location_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"nav_link",
+			"h4",
+			"h3",
+			"h2",
+			"/*",
+			"*/",
+			"}",
+			"{",
+			";",
+			"@project",
+			"        list-style: none",
+			"validates :title,        :presence => true,\n                           :uniqueness => true\n  validates :description,  :presence => true",
+			"red"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"h3",
+			"h2",
+			"h1",
+			"//"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	{
+		"mount_points":
+		[
+			"/home/robert/Dropbox/Sites/blog"
+		]
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/robert/Dropbox/Sites/blog/.rvmrc",
+					"settings":
+					{
+						"buffer_size": 23,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23,
+								23
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0,
+			1
+		],
+		"rows":
+		[
+			0,
+			1
+		]
+	},
+	"menu_visible": true,
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0,
+		"selected_items":
+		[
+		],
+		"width": 0
+	},
+	"select_project":
+	{
+		"height": 500,
+		"selected_items":
+		[
+		],
+		"width": 380
+	},
+	"show_minimap": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 153,
+	"status_bar_visible": true
+}
