@@ -13,6 +13,9 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'therubyracer'
 
+# text formatting with textile
+# gem 'RedCloth'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
