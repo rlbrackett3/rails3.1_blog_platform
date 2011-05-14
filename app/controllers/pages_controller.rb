@@ -13,7 +13,12 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page = Page.find(params[:id])
+    if params[:permalink]
+      @page = Page.find_by_permalink params[:permalink]
+      raise ActiveRecord::RecordNotFound, "Page not found" if @page.nil?
+    else
+      @page = Page.find(params[:id])
+    end
 
     respond_to do |format|
       format.html # show.html.erb

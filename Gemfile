@@ -14,7 +14,7 @@ gem 'jquery-rails'
 gem 'therubyracer'
 
 # text formatting with textile
-# gem 'RedCloth'
+gem 'RedCloth'
 
 # Use unicorn as the web server
 # gem 'unicorn'
