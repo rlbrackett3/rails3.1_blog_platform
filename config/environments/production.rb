@@ -9,11 +9,12 @@ Blog::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  # config.serve_static_assets = false
+  config.serve_static_assets = true # for heroku
 
   # Compress both stylesheets and JavaScripts
   config.assets.js_compressor  = :uglifier
-  config.assets.css_compressor = :scss
+  config.assets.css_compressor = :scss # or :sass
 
   # Specifies the header that your server uses for sending files
   # (comment out if your front-end server doesn't support this)

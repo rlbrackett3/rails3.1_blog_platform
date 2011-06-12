@@ -11,18 +11,18 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/home/robert/Dropbox/Sites/blog/.rvmrc",
-			"settings":
-			{
-				"buffer_size": 23,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"file_history":
 	[
+		"/home/robert/Dropbox/Sites/blog/app/models/page.rb",
+		"/home/robert/Dropbox/Sites/blog/config/routes.rb",
+		"/home/robert/Dropbox/Sites/blog/app/views/pages/index.html.erb",
+		"/home/robert/Dropbox/Sites/blog/app/controllers/pages_controller.rb",
+		"/home/robert/Dropbox/Sites/blog/app/controllers/posts_controller.rb",
+		"/home/robert/Dropbox/Sites/blog/Gemfile",
+		"/home/robert/Dropbox/Sites/blog/app/assets/javascripts/application.js",
+		"/home/robert/Dropbox/Sites/blog/.rvmrc",
 		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/02_master.sass",
 		"/home/robert/Dropbox/Sites/dn/public/stylesheets/sass/01_include.sass",
 		"/home/robert/Dropbox/Sites/dn/app/views/shared/_right_column_info.html.haml",
@@ -142,15 +142,7 @@
 		"/home/robert/Dropbox/rlb_sites/dn/app/models/portfolio.rb",
 		"/home/robert/Dropbox/rlb_sites/dn/app/models/project.rb",
 		"/home/robert/Dropbox/rlb_sites/dn/public/stylesheets/sass/dn_master.sass",
-		"/home/robert/Dropbox/rlb_sites/dn/public/stylesheets/sass/dn_admin.sass",
-		"/home/robert/Dropbox/rlb_sites/dn/public/stylesheets/sass/dn_support.sass",
-		"/home/robert/Dropbox/rlb_sites/dn/app/models/affiliation.rb",
-		"/home/robert/Dropbox/rlb_sites/dn/app/controllers/projects_controller.rb",
-		"/home/robert/Dropbox/rlb_sites/dn/app/controllers/images_controller.rb",
-		"/home/robert/Dropbox/rlb_sites/dn/app/views/projects/show.html.haml",
-		"/home/robert/Dropbox/rlb_sites/dn/app/views/shared/_right_column.html.haml",
-		"/home/robert/Dropbox/rlb_sites/dn/app/views/shared/_slideshow.html.haml",
-		"/home/robert/Dropbox/rlb_sites/dn/app/views/images/show.html.haml"
+		"/home/robert/Dropbox/rlb_sites/dn/public/stylesheets/sass/dn_admin.sass"
 	],
 	"find_in_files":
 	{
@@ -209,32 +201,11 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/home/robert/Dropbox/Sites/blog/.rvmrc",
-					"settings":
-					{
-						"buffer_size": 23,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								23,
-								23
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -247,11 +218,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0,
+			0.295383001049,
 			1
 		],
 		"rows":
