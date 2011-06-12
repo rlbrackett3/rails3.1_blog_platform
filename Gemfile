@@ -38,6 +38,8 @@ group :development do
 	gem 'therubyracer'
 	# production more simulation
 	gem 'foreman'
+	# more descriptive models
+	gem 'annotate'
 end
 
 # gems used in testing and development
