@@ -13,12 +13,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    if params[:permalink]
-      @page = Page.find_by_permalink params[:permalink]
-      raise ActiveRecord::RecordNotFound, "Page not found" if @page.nil?
-    else
-      @page = Page.find(params[:id])
-    end
+    @page = Page.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,12 +34,7 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
-    if params[:permalink]
-      @page = Page.find_by_permalink params[:permalink]
-      raise ActiveRecord::RecordNotFound, "Page not found" if @page.nil?
-    else
-      @page = Page.find(params[:id])
-    end
+    @page = Page.find(params[:id])
   end
 
   # POST /pages

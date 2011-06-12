@@ -1,9 +1,7 @@
 Blog::Application.routes.draw do
 
   resources :posts
-
   resources :pages
-  match ':permalink' => 'pages#show'
 
   root :to => 'posts#index'
 
