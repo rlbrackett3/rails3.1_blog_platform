@@ -35,7 +35,9 @@ end
 # development only gems
 group :development do
 	# JS runtime environment
-gem 'therubyracer'
+	gem 'therubyracer'
+	# production more simulation
+	gem 'foreman'
 end
 
 # gems used in testing and development
