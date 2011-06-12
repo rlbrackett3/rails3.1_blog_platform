@@ -23,17 +23,4 @@ class ActiveSupport::TestCase
 
     assert protected_attributes.include?(attribute), "expected attribute :#{attribute} to be protected"
   end
-
-  def assert_accessible_attribute model, attribute
-    accessible = model.read_inheritable_attribute(:attr_accessible).to_a.map(&:to_sym)
-    protekted = model.read_inheritable_attribute(:attr_protected).to_a.map(&:to_sym)
-    all = model.column_names.map(&:to_sym)
-
-    accessible_attributes = []
-    accessible_attributes << accessible if accessible
-    # accessible_attributes << (all - protekted) if protekted
-    accessible_attributes.flatten!
-
-    assert accessible_attributes.include?(attribute), "expected attribute :#{attribute} to be accessible"
-  end
 end
