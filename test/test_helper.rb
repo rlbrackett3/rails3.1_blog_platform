@@ -10,4 +10,30 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  # Test assertion for attr_protected
+  def assert_protected_attribute model, attribute
+    accessible = model.read_inheritable_attribute(:attr_accessible).to_a.map(&:to_sym)
+    protekted = model.read_inheritable_attribute(:attr_protected).to_a.map(&:to_sym)
+    all = model.column_names.map(&:to_sym)
+
+    protected_attributes = []
+    protected_attributes << protekted if protekted
+    protected_attributes << (all - accessible) if accessible
+    protected_attributes.flatten!
+
+    assert protected_attributes.include?(attribute), "expected attribute :#{attribute} to be protected"
+  end
+
+  def assert_accessible_attribute model, attribute
+    accessible = model.read_inheritable_attribute(:attr_accessible).to_a.map(&:to_sym)
+    protekted = model.read_inheritable_attribute(:attr_protected).to_a.map(&:to_sym)
+    all = model.column_names.map(&:to_sym)
+
+    accessible_attributes = []
+    accessible_attributes << accessible if accessible
+    # accessible_attributes << (all - protekted) if protekted
+    accessible_attributes.flatten!
+
+    assert accessible_attributes.include?(attribute), "expected attribute :#{attribute} to be accessible"
+  end
 end

@@ -41,6 +41,53 @@ class PageTest < ActiveSupport::TestCase
     page = Page.create(title: 'foo')
     assert !page.save, "saved the page without a permalink"
   end
+
+  # testing for accessible and protected attr
+  # accessible attr
+  test 'title should be accessible' do
+    !assert_protected_attribute Page, :title
+  end
+
+  test 'permalink should be accessible' do
+    !assert_protected_attribute Page, :permalink
+  end
+
+  test 'content should be accessible' do
+    !assert_protected_attribute Page, :content
+  end
+
+  # I can probably remove these, but they seem to work for now
+  test 'should make title attr accessible' do
+    @page.title = "title"
+    @page.save
+    assert_equal @page.title, "title", "Unable to change title"
+  end
+
+  test 'should have permalink attr accessible' do
+    @page.permalink = "permalink"
+    @page.save
+    assert_equal @page.permalink, "permalink", "Unable to change permalink"
+  end
+
+  test 'should have content attr accessible' do
+    @page.content = "content"
+    @page.save
+    assert_equal @page.content, "content", "Unable to change content"
+  end
+
+  # protected attr
+  test 'should protect created_at' do
+    assert_protected_attribute Page, :created_at
+  end
+
+  test 'should protect updated_at' do
+    assert_protected_attribute Page, :updated_at
+  end
+
+  test 'should protect id' do
+    assert_protected_attribute Page, :id
+  end
+
 end
 
 # == Schema Information
