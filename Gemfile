@@ -10,6 +10,9 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 
+# friendly urls (slugging)
+# gem 'friendly_id'
+
 # text formatting with textile
 gem 'RedCloth'
 
@@ -36,7 +39,7 @@ end
 group :development do
 	# JS runtime environment
 	gem 'therubyracer'
-	# production more simulation
+	# production env simulation
 	gem 'foreman'
 	# more descriptive models
 	gem 'annotate'
@@ -44,7 +47,6 @@ end
 
 # gems used in testing and development
 group :development, :test do
-
 end
 
 # test only gems
