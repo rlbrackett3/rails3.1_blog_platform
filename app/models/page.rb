@@ -1,8 +1,10 @@
 class Page < ActiveRecord::Base
   attr_accessible :title, :permalink, :description
 
-  validates :title, :permalink,  presence: true,
-                                                uniqueness: true
+  validates :title,               presence: true,
+                                          uniqueness: true
+  validates  :permalink,    presence: true,
+                                          uniqueness: true
 end
 
 # == Schema Information

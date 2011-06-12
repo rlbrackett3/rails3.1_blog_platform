@@ -10,6 +10,11 @@ two:
   permalink: MyString
   content: MyText
 
+about:
+  title: About
+  permalink: About
+  content: This is a page about the blog.
+
 # == Schema Information
 #
 # Table name: pages

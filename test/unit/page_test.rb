@@ -2,29 +2,44 @@ require 'test_helper'
 
 class PageTest < ActiveSupport::TestCase
   def setup
-    @page = Page.new
+    @page = Page.create(title: 'foo', permalink: 'bar', content: 'foobar')
   end
 
-  test 'create a new static page' do
-    page = Page.create(title: 'test', permalink: 'test', content: 'testing')
-    assert page
+  test 'should create a new page with valid attr' do
+    assert @page
   end
 
-  test 'new page saves successfully' do
-     page = Page.new(title: 'test', permalink: 'test', content: 'testing')
+  test 'should save a new page with valid attr' do
+     page = Page.new(title: 'bar', permalink: 'foo', content: 'foobar')
     assert page.save
   end
 
   # testing for validations
-  test 'new page with no attributes does not save' do
+  test 'should not save a new page with no attr' do
     page = Page.new
-    assert page
+    assert !page.save, "Saved the page without no attr"
   end
 
-  test 'does not save new page with non unique name' do
-    page = Page.new(title: 'test', permalink: 'test')
-    page2 = Page.new(title: 'test', permalink: 'test')
-    assert page2
+  test 'should not save new page with non unique title' do
+    #page = Page.create(title: 'test', permalink: 'foo')
+    page2 = Page.new(title: 'foo', permalink: 'foo')
+    assert !page2.save, "Saved the page with duplicate title"
+  end
+
+  test 'should not save new page with non unique permalink' do
+    #page = Page.create(title: 'foo', permalink: 'foo')
+    page2 = Page.new(title: 'bar', permalink: 'bar')
+    assert !page2.save, "Saved the page with duplicate permalink"
+  end
+
+  test 'should require presence of title' do
+    page = Page.new(permalink: 'foo')
+    assert !page.save, "Saved the page without a title"
+  end
+
+  test 'should require presence of permalink' do
+    page = Page.create(title: 'foo')
+    assert !page.save, "saved the page without a permalink"
   end
 end
 

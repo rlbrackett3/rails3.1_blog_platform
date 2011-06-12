@@ -54,4 +54,6 @@ group :test do
   gem 'sqlite3'
   # Pretty printed test output
   gem 'turn', :require => false
+  # Mocks fro testing
+  gem 'mocha'
 end
