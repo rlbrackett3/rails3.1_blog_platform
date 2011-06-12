@@ -2,8 +2,8 @@ Blog::Application.routes.draw do
 
   resources :posts
 
-  match '/pages/:permalink' => 'pages#show'
   resources :pages
+  match ':permalink' => 'pages#show'
 
   root :to => 'posts#index'
 
