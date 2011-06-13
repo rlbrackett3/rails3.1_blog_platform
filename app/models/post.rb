@@ -9,7 +9,8 @@ class Post < ActiveRecord::Base
   validates :title,           presence: true,
                                       length: { maximum: TITLE_MAX_LENGTH }
   validates :body,          presence: true
-  validates :admin_id,   presence: true
+  # validates :admin_id,   presence: true
+  validates_associated :admin
 
 
 
