@@ -10,13 +10,20 @@
     = yield(:head)
 
   %body
-    #container
+    %header
       - if flash[:notice] || flash[:alert]
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
+      %nav#header
 
+    #container
       - if show_title?
-        / page title
         %h1= yield(:title)
 
     = yield
+
+    %footer
+      %nav#footer
+
+  - if Rails.env.development?
+    = render "layouts/debug"

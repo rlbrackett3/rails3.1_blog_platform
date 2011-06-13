@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_filter :login_required #, :except => [:new, :create]
+  before_filter :admin_login_required #, :except => [:new, :create]
 
   # def new
   #   @admin = Admin.new

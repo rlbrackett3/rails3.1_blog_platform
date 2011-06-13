@@ -1,13 +1,13 @@
-%p#notice= notice
-%p
-  %b Title:
-  = @page.title
-%p
-  %b Permalink:
-  = @page.permalink
-%p
-  %b Content:
-  = @page.content
-= link_to 'Edit', edit_page_path(@page)
-|
-= link_to 'Back', pages_path
+%article
+  %header
+    %h3= @page.title
+  %section
+    :textile
+      #{@page.content}
+
+
+%nav
+  - if admin_logged_in?
+    = link_to 'Edit', edit_page_path(@page)
+    |
+  = link_to 'Back', pages_path

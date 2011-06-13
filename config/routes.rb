@@ -6,7 +6,7 @@ Blog::Application.routes.draw do
   match 'login' => 'sessions#new', :as => :login
 
   resources :sessions, only: [ :new, :create, :destroy]
-  resources :admins, only: [ :edit ]
+  resources :admins, only: [ :edit, :update ]
 
   resources :posts
   resources :pages

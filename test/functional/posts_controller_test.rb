@@ -12,11 +12,13 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    login_admin
     get :new
     assert_response :success
   end
 
   test "should create post" do
+    login_admin
     assert_difference('Post.count') do
       post :create, post: @post.attributes
     end
@@ -30,16 +32,19 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    login_admin
     get :edit, id: @post.to_param
     assert_response :success
   end
 
   test "should update post" do
+    login_admin
     put :update, id: @post.to_param, post: @post.attributes
     assert_redirected_to post_path(assigns(:post))
   end
 
   test "should destroy post" do
+    login_admin
     assert_difference('Post.count', -1) do
       delete :destroy, id: @post.to_param
     end
