@@ -26,18 +26,15 @@ class PostsControllerTest < ActionController::TestCase
 
   test "should not create post without admin" do
     login_admin
-    invalid_post = posts(:one)
     assert_no_difference('Post.count') do
-      post :create, post: invalid_post.attributes
+      post :create, post: { title: "new post", body: "with a body" }
     end
-
-    assert_redirected_to :new
   end
 
   test "should create post with valid admin" do
     login_admin
     assert_difference('Post.count') do
-      post :create, post: {title: "new post", body: "with a body"}, admin_id: admins(:foo).id
+      post :create, post: { title: "new post", body: "with a body", admin_id: admins(:foo).id }
     end
 
     assert_redirected_to post_path(assigns(:post))
