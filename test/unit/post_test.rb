@@ -3,33 +3,59 @@ require 'test_helper'
 class PostTest < ActiveSupport::TestCase
 
   def setup
-    @post = Post.create(title: "foo", body: "bar")
+    admin = admins :foo
+    @post = Post.create(title: "foo", body: "bar", )
+    @post.admin = admin
+    @post.save
   end
-  # creating a post
-  test 'should create a new post' do
+  # valid post data
+  test 'check that data is valid' do
     post = Post.new
+
+    # assert post record build in DB
     assert post
+
+    # assert not valid because admin is required
+    assert !post.valid?, "Valid post was created without title, body, and admin"
+
+    # load admin from fixtures
+    admin_id = admins(:foo).id
+
+    post.title = "Title"
+    post.body = "Some body text."
+    post.admin_id = admin_id
+
+    assert post.valid?
+
+    # compare equal attr
+    assert_equal post.title, "Title"
+    assert_equal post.body, "Some body text."
+    assert_equal post.admin_id, admin_id
   end
 
   # responding to attrs and methods
   test 'should respond to title' do
-    assert @post.title, "no such attr or method"
+    assert @post.title, "Post does not respond to title."
   end
 
   test 'should respond to body' do
-    assert @post.body, "no such attr or method"
+    assert @post.body, "Post does not respond to body."
   end
 
   test 'should respond to created_at' do
-    assert @post.created_at, "no such attr or method"
+    assert @post.created_at, "Post does not respond to created_at."
   end
 
   test 'should respond to updated_at' do
-    assert @post.updated_at, "no such attr or method"
+    assert @post.updated_at, "Post does not respond to updated_at."
   end
 
   test 'should respond to id' do
-    assert @post.id, "no such attr or method"
+    assert @post.id, "Post does not respond to id."
+  end
+
+  test 'should respond to admin association' do
+    assert @post.admin_id, "Post does not respond and admin assoc."
   end
 
   # accessible attr
@@ -78,6 +104,23 @@ class PostTest < ActiveSupport::TestCase
   test 'should not create a post without a body' do
     post = Post.new(title: "foo", body: "")
     assert !post.save, "Created an invalid post with no body."
+  end
+
+  # Associations
+  test 'check admin user assocaitions' do
+    # retrieve admin from fixtures
+    admin = admins(:foo)
+
+    # create post with association
+    post = Post.create(title: "foo", body: "bar",)
+
+    assert !post.save, "Saved post without admin association."
+
+    post.admin = admin
+
+    assert post.save, "Unable to save post with admin association."
+    post.save
+    assert_equal post.admin.id, admin.id, "Failed to create valid post with admin association."
   end
 
 end

@@ -1,5 +1,12 @@
 require 'test_helper'
 
+# Things to include
+# was the web request successful?
+# was the user redirected to the right page?
+# was the user successfully authenticated?
+# was the correct object stored in the response template?
+# was the appropriate message displayed to the user in the view?
+
 class PostsControllerTest < ActionController::TestCase
   setup do
     @post = posts(:one)

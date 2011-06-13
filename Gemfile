@@ -9,8 +9,19 @@ gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
 
+# Deploy with Heroku
+# gem 'heroku'
+
 # friendly urls (slugging)
 # gem 'friendly_id'
+
+# storing images in amazon s3
+# gem 'carrierwave'
+# gem 'fog'
+# gem 'mini_magick'
+
+# pagination
+# gem 'kaminari'
 
 # text formatting with textile
 gem 'RedCloth'
