@@ -13,6 +13,7 @@ valid:
   body: The Body Text.
   admin: foo # loaded from admin.fixtures
 
+
 # == Schema Information
 #
 # Table name: posts
@@ -22,5 +23,6 @@ valid:
 #  body       :text
 #  created_at :datetime
 #  updated_at :datetime
+#  admin_id   :integer
 #
 
