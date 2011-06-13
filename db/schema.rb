@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110613035104) do
+ActiveRecord::Schema.define(:version => 20110613043529) do
 
   create_table "admins", :force => true do |t|
     t.string   "username"
@@ -39,5 +39,7 @@ ActiveRecord::Schema.define(:version => 20110613035104) do
     t.datetime "updated_at"
     t.integer  "admin_id"
   end
+
+  add_index "posts", ["admin_id"], :name => "index_posts_on_admin_id"
 
 end

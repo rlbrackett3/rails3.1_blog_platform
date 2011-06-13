@@ -8,6 +8,11 @@ two:
   title: MyString
   body: MyText
 
+valid:
+  title: The Title.
+  body: The Body Text.
+  admin: foo # loaded from admin.fixtures
+
 # == Schema Information
 #
 # Table name: posts
