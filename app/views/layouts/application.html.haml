@@ -1,9 +1,22 @@
 !!!
 %html
   %head
-    %title Blog
+    %title
+      = yield(:title) || "Untitled"
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    = yield(:head)
+
   %body
+    #container
+      - if flash[:notice] || flash[:alert]
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
+
+      - if show_title?
+        // page title
+        %h1= yield(:title)
+
     = yield

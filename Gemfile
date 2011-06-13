@@ -7,7 +7,6 @@ gem 'haml'
 gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
-
 gem 'jquery-rails'
 
 # friendly urls (slugging)
@@ -37,12 +36,14 @@ end
 
 # development only gems
 group :development do
-	# JS runtime environment
-	gem 'therubyracer'
-	# production env simulation
-	gem 'foreman'
-	# more descriptive models
-	gem 'annotate'
+  # JS runtime environment
+  gem 'therubyracer'
+  # production env simulation
+  gem 'foreman'
+  # more descriptive models
+  gem 'annotate'
+  # Ryan Bates nifty generators
+  gem 'nifty-generators'
 end
 
 # gems used in testing and development
@@ -57,3 +58,4 @@ group :test do
   # Mocks fro testing
   gem 'mocha'
 end
+gem "bcrypt-ruby", :require => "bcrypt"

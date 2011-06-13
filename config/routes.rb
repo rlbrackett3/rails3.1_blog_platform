@@ -1,5 +1,13 @@
 Blog::Application.routes.draw do
 
+  match 'admin/edit' => 'admins#edit', :as => :edit_current_admin
+  # match 'signup' => 'admins#new', :as => :signup # no signing up as an admin :)
+  match 'logout' => 'sessions#destroy', :as => :logout
+  match 'login' => 'sessions#new', :as => :login
+
+  resources :sessions
+  resources :admins
+
   resources :posts
   resources :pages
 
