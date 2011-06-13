@@ -5,8 +5,8 @@ Blog::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'login' => 'sessions#new', :as => :login
 
-  resources :sessions
-  resources :admins
+  resources :sessions, only: [ :new, :create, :destroy]
+  resources :admins, only: [ :edit ]
 
   resources :posts
   resources :pages

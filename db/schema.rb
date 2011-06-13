@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110514040931) do
+ActiveRecord::Schema.define(:version => 20110613011509) do
+
+  create_table "admins", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
+  add_index "admins", ["username"], :name => "index_admins_on_username", :unique => true
 
   create_table "pages", :force => true do |t|
     t.string   "title"

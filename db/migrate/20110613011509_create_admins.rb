@@ -7,6 +7,9 @@ class CreateAdmins < ActiveRecord::Migration
       t.string :password_salt
       t.timestamps
     end
+
+    add_index :admins, :email, :unique => true
+    add_index :admins, :username, :unique => true
   end
 
   def self.down

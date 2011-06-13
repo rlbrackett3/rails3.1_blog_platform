@@ -1,19 +1,19 @@
 class AdminsController < ApplicationController
-  before_filter :login_required, :except => [:new, :create]
+  before_filter :login_required #, :except => [:new, :create]
 
-  def new
-    @admin = Admin.new
-  end
+  # def new
+  #   @admin = Admin.new
+  # end
 
-  def create
-    @admin = Admin.new(params[:admin])
-    if @admin.save
-      session[:admin_id] = @admin.id
-      redirect_to root_url, :notice => "Thank you for signing up! You are now logged in."
-    else
-      render :action => 'new'
-    end
-  end
+  # def create
+  #   @admin = Admin.new(params[:admin])
+  #   if @admin.save
+  #     session[:admin_id] = @admin.id
+  #     redirect_to root_url, :notice => "Thank you for signing up! You are now logged in."
+  #   else
+  #     render :action => 'new'
+  #   end
+  # end
 
   def edit
     @admin = current_admin

@@ -48,6 +48,9 @@ end
 
 # gems used in testing and development
 group :development, :test do
+   gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'database_cleaner'
 end
 
 # test only gems
@@ -58,4 +61,3 @@ group :test do
   # Mocks fro testing
   gem 'mocha'
 end
-gem "bcrypt-ruby", :require => "bcrypt"
