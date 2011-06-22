@@ -26,4 +26,23 @@ default_admin = Admin.create(
 default_admin.save
 puts "#{default_admin.username} successfully created!"
 
+puts "Creating a draft post."
+draft_post = Post.create(
+  title: 'Draft Post',
+  body: 'This is a draft post.',
+  state: 'draft',
+  admin_id: default_admin.id
+)
+puts "Draft post created successfully."
+
+puts "Creating a published post."
+published_post = Post.create(
+  title: 'Published Post',
+  body: 'This is a published post.',
+  state: 'published',
+  admin_id: default_admin.id
+)
+puts "Published post created successfully."
+
+
 puts "THE DATABASE IS NOW FILLED WITH SAMPLE DATA!"

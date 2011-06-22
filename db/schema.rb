@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110613043529) do
+ActiveRecord::Schema.define(:version => 20110622023106) do
 
   create_table "admins", :force => true do |t|
     t.string   "username"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(:version => 20110613043529) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["username"], :name => "index_admins_on_username", :unique => true
+
+  create_table "draft_posts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "admin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -38,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20110613043529) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "admin_id"
+    t.string   "state"
+    t.string   "access_state"
   end
 
   add_index "posts", ["admin_id"], :name => "index_posts_on_admin_id"

@@ -3,7 +3,7 @@ class CreateDraftPosts < ActiveRecord::Migration
     create_table :draft_posts do |t|
       t.string :title
       t.text :body
-      t.association :admin
+      t.integer :admin_id
 
       t.timestamps
     end
