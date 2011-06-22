@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   # self.abstract = true
 
-  attr_accessible :title, :body, :admin_id, :state
+  attr_accessible :title, :body, :state, :published_at, :admin_id #protect the admin id
 
   belongs_to :admin
 
@@ -23,9 +23,10 @@ class Post < ActiveRecord::Base
   #constants
   TITLE_MAX_LENGTH = 200
 
-  validates :title,           presence: true,
-                                      length: { maximum: TITLE_MAX_LENGTH }
-  validates :body,          presence: true
+  validates :title,               presence: true,
+                                          length: { maximum: TITLE_MAX_LENGTH }
+  validates :body,               presence: true
+  # validates :published_at,  presence: true, allow_nil: true
   # validates :admin_id,   presence: true
   validates_associated :admin
 
@@ -38,16 +39,18 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: posts
 #
-#  id         :integer         not null, primary key
-#  title      :string(255)
-#  body       :text
-#  created_at :datetime
-#  updated_at :datetime
-#  admin_id   :integer
-#  state      :string(255)
+#  id           :integer         not null, primary key
+#  title        :string(255)
+#  body         :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#  admin_id     :integer
+#  state        :string(255)
+#  published_at :datetime
 #
 

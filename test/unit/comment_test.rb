@@ -198,7 +198,7 @@ class CommentTest < ActiveSupport::TestCase
   # scopes
   ################################
   test 'default scope should be order created_at DESC' do
-    assert fail
+    assert flunk
   end
 
   test 'should respond to .unapproved scope' do

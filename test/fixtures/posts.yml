@@ -12,7 +12,7 @@ valid:
   title: The Title.
   body: The Body Text.
   admin: foo # loaded from admin.fixtures
-  state: published
+  state: initial
 
 draft:
   title: Draft Title.
@@ -20,18 +20,27 @@ draft:
   admin: foo # loaded from admin.fixtures
   state: draft
 
+published:
+  title: Published Title.
+  body: Published Body Text.
+  admin: foo # loaded from admin.fixtures
+  state: published
+  published_at: 2011-06-09T10:50:13-0500
+
+
 
 
 # == Schema Information
 #
 # Table name: posts
 #
-#  id         :integer         not null, primary key
-#  title      :string(255)
-#  body       :text
-#  created_at :datetime
-#  updated_at :datetime
-#  admin_id   :integer
-#  state      :string(255)
+#  id           :integer         not null, primary key
+#  title        :string(255)
+#  body         :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#  admin_id     :integer
+#  state        :string(255)
+#  published_at :datetime
 #
 

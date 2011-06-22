@@ -51,6 +51,11 @@ class PostTest < ActiveSupport::TestCase
     assert @post.updated_at, "Post does not respond to updated_at."
   end
 
+  test 'should respond to published_at' do
+    post = posts(:published)
+    assert post.published_at, "Post does not respond to published_at."
+  end
+
   test 'should respond to id' do
     assert @post.id, "Post does not respond to id."
   end
@@ -147,10 +152,6 @@ class PostTest < ActiveSupport::TestCase
 
   # scopes
   ################################
-  test 'default scope should be order created_at DESC' do
-    assert fail
-  end
-
   test 'should respond to .drafts scope' do
     assert_respond_to Post, :drafts, "Did not respond to the drafts scope."
   end
@@ -181,16 +182,18 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: posts
 #
-#  id         :integer         not null, primary key
-#  title      :string(255)
-#  body       :text
-#  created_at :datetime
-#  updated_at :datetime
-#  admin_id   :integer
-#  state      :string(255)
+#  id           :integer         not null, primary key
+#  title        :string(255)
+#  body         :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#  admin_id     :integer
+#  state        :string(255)
+#  published_at :datetime
 #
 
