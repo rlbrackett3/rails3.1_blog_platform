@@ -129,6 +129,17 @@ class PostTest < ActiveSupport::TestCase
     assert_equal post.admin.id, admin.id, "Failed to create valid post with admin association."
   end
 
+  # publsihed_at
+  ################################
+  test 'should accept valid datetime for published_at' do
+    assert flunk
+  end
+
+  test 'should not accept invalid datetime for published_at' do
+    assert flunk
+  end
+  ################################
+
   # states
   ################################
   test 'should have a default state of "initial"' do

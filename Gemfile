@@ -36,6 +36,10 @@ gem 'capistrano'
 gem 'state_machine'
 gem 'ruby-graphviz', :require => 'graphviz'
 
+# Special validations
+# datetime validations
+#gem 'validates_timeliness', '~> 3.0.5' #https://github.com/adzap/validates_timeliness.git
+
 # To use debugger
 gem 'ruby-debug19', :require => 'ruby-debug'
 
