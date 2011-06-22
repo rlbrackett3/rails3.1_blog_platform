@@ -6,6 +6,7 @@ class CommentTest < ActiveSupport::TestCase
     @comment = comments(:valid)
   end
 
+  ################################
   test 'should have valid attr' do
     comment = Comment.new
     # assert post record build in DB
@@ -36,8 +37,10 @@ class CommentTest < ActiveSupport::TestCase
     assert_equal comment.post_id, posts(:valid).id
 
   end
+  ################################
 
   # Responding to attr and methods
+  ################################
   test 'should respond to name' do
     assert @comment.name, "Comment does not respond to name."
   end
@@ -73,6 +76,7 @@ class CommentTest < ActiveSupport::TestCase
   test 'should respond to state' do
     assert @comment.state, "Comment does not respond to state"
   end
+  ################################
 
   # attr data validations
   # name
@@ -189,6 +193,29 @@ class CommentTest < ActiveSupport::TestCase
   #   # assert_not_equal c.state, "unapproved", "Transitioned state from approved to unapproved."
   #   assert_equal c.state, "approved", "State changed from approved."
   # end
+  ################################
+
+  # scopes
+  ################################
+  test 'should respond to .unapproved scope' do
+    assert_respond_to Comment, :unapproved, "Did not respond to the unapproved scope."
+  end
+
+  test 'unapproved scope should include unapproved comments' do
+    unapproved_comment = Comment.create(name: "foob", email: "foo@bar.com", url: "", body: "foobars")
+    assert_includes Comment.unapproved, unapproved_comment, "Does not contain the unapproved comment."
+  end
+
+  test 'should respond to .approved scope' do
+    assert_respond_to Comment, :approved, "Did not respond to the approved scope."
+  end
+
+  test 'approved scope should include approved comments' do
+    approved_comment = Comment.create(name: "foob", email: "foo@bar.com", url: "", body: "foobars")
+    approved_comment.state = "approved"
+    approved_comment.save
+    assert_includes Comment.approved, approved_comment, "Does not contain the approved comment."
+  end
   ################################
 
 end

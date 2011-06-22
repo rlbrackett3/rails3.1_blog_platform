@@ -29,7 +29,7 @@ class Post < ActiveRecord::Base
   # validates :admin_id,   presence: true
   validates_associated :admin
 
-  # scopes
+  # # scopes
   scope :drafts, where(state: 'draft')
   scope :published, where(state: 'published')
 

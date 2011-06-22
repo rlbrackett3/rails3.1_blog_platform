@@ -29,6 +29,7 @@ class Comment < ActiveRecord::Base
   scope :unapproved, where(state: 'unapproved')
   scope :approved, where(state: 'approved')
 
+
 end
 
 

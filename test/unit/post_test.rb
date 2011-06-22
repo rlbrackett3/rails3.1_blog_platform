@@ -124,7 +124,8 @@ class PostTest < ActiveSupport::TestCase
     assert_equal post.admin.id, admin.id, "Failed to create valid post with admin association."
   end
 
-  # States
+  # states
+  ################################
   test 'should have a default state of "initial"' do
     post = Post.create(title: 'foo', body: 'bar', admin_id: @admin.id)
     assert_equal post.state, "initial", "Create post without a state."
@@ -142,6 +143,33 @@ class PostTest < ActiveSupport::TestCase
     @post.state = "draft"
     assert @post.save, "Unable to updated a post with 'draft' state"
   end
+  ################################
+
+  # scopes
+  ################################
+  test 'should respond to .drafts scope' do
+    assert_respond_to Post, :drafts, "Did not respond to the drafts scope."
+  end
+
+  test 'drafts scope should include draft posts' do
+    draft_post = Post.create(title: "foo draft", body: "foobars")
+    draft_post.state = "draft"
+    draft_post.save
+    assert_includes Post.drafts, draft_post, "Does not contain the draft post."
+  end
+
+  test 'should respond to .;published scope' do
+    assert_respond_to Post, :published, "Did not respond to the published scope."
+  end
+
+  test 'published scope should include published posts' do
+    published_post = Post.create(title: "foo published", body: "foobars")
+    published_post.state = "published"
+    published_post.save
+    assert_includes Post.published, published_post, "Does not contain the published post."
+  end
+
+  ################################
 
 
 end
