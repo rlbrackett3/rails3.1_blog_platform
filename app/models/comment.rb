@@ -1,7 +1,8 @@
 class Comment < ActiveRecord::Base
   attr_accessible :name, :email, :url, :body
 
-  belongs_to :post, dependent: :destroy
+  belongs_to :post
+  has_many  :replies, dependent: :destroy
 
   # States and Transitions with state_machine gem
   state_machine initial: :unapproved do

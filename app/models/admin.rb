@@ -5,7 +5,7 @@ class Admin < ActiveRecord::Base
   attr_accessor :password
   before_save :prepare_password
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
   # has_many :draft_posts
   # has_many :published_posts
 
