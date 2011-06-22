@@ -6,20 +6,13 @@ class Post < ActiveRecord::Base
   belongs_to :admin
 
   # States
-  state_machine :initial => :new_post do
+  state_machine :initial => :draft do
     event :preview do
-      transition :new_post => :preview
       transition :draft => :preview
-    end
-
-    event :editing do
-      transition :preview => :editing
     end
 
     event :draft do
       transition :preview => :draft
-      transition :editing => :draft
-      transition :new_post => :draft
     end
 
     event :published do
