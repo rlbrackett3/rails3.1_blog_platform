@@ -13,6 +13,11 @@ valid:
   body: The Body Text.
   admin: foo # loaded from admin.fixtures
 
+draft:
+  title: Draft Title.
+  body: Draft Body Text.
+  admin: foo # loaded from admin.fixtures
+  state: draft
 
 
 # == Schema Information

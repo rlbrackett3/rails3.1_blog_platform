@@ -10,7 +10,7 @@ module Blog
   class Application < Rails::Application
     config.autoload_paths << "#{config.root}/lib"
     config.generators do |g|
-      g.template_engine     :haml
+      g.template_engine :haml
       # g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
     # Settings in config/environments/* take precedence over those specified here.

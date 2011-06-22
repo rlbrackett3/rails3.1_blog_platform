@@ -59,6 +59,8 @@ group :development do
   gem 'annotate'
   # Ryan Bates nifty generators
   gem 'nifty-generators'
+  # haml support for rails
+  gem 'haml-rails'
 end
 
 # gems used in testing and development
