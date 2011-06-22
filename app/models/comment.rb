@@ -3,6 +3,13 @@ class Comment < ActiveRecord::Base
 
   belongs_to :post, dependent: :destroy
 
+  # States and Transitions with state_machine gem
+  state_machine initial: :unapproved do
+    event :approved do
+      transition unapproved: :approved
+    end
+  end
+
   # Validations
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   name_regex = /[a-zA-Z0-9_ ]/i
@@ -20,6 +27,7 @@ class Comment < ActiveRecord::Base
 
 end
 
+
 # == Schema Information
 #
 # Table name: comments
@@ -32,5 +40,6 @@ end
 #  post_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  state      :string(255)
 #
 

@@ -70,6 +70,10 @@ class CommentTest < ActiveSupport::TestCase
     assert @comment.post_id, "Comment does not respond to post_id."
   end
 
+  test 'should respond to state' do
+    assert @comment.state, "Comment does not respond to state"
+  end
+
   # attr data validations
   # name
   ################################
@@ -156,11 +160,39 @@ class CommentTest < ActiveSupport::TestCase
 
   test 'url should allow a blank url' do
     @comment.url = ""
-    assert @comment.valid?
+    assert @comment.valid?, "Unable to save comment without a url"
   end
   ################################
 
+  # state
+  ################################
+  test 'state should be set to "unapproved" on create' do
+    c = Comment.new
+    assert_equal c.state, "unapproved", "Failed to set initial state."
+  end
+
+  test 'state should transition to "approved"' do
+    @comment.state = "approved"
+    assert_equal @comment.state, "approved", "Unable to transition state to 'approved'"
+  end
+
+  test 'state should not accept an invalid state' do
+    c = comments(:approved)
+    c.state = "invalid_state"
+    assert !c.valid?, "Changed state to an invaild state."
+  end
+
+  # test 'state should not transition to "unapproved"' do
+  #   c = comments(:approved)
+  #   c.state = "unapproved"
+  #   c.save
+  #   # assert_not_equal c.state, "unapproved", "Transitioned state from approved to unapproved."
+  #   assert_equal c.state, "approved", "State changed from approved."
+  # end
+  ################################
+
 end
+
 
 # == Schema Information
 #
@@ -174,5 +206,6 @@ end
 #  post_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  state      :string(255)
 #
 

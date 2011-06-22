@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   belongs_to :admin
 
-  # States
+  # States and Transitions with state_machine gem
   state_machine :initial => :initial do
     event :preview do
       transition :draft => :preview
