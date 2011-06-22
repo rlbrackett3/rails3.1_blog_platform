@@ -153,6 +153,11 @@ class CommentTest < ActiveSupport::TestCase
 
     assert !@comment.valid?, "Saved a comment with a long url."
   end
+
+  test 'url should allow a blank url' do
+    @comment.url = ""
+    assert @comment.valid?
+  end
   ################################
 
 end

@@ -14,7 +14,7 @@ class Comment < ActiveRecord::Base
   validates :email,           presence: true,
                                         length: { within: 5..120 },
                                         format: email_regex
-  validates :url,               length: { within: 9..254, allow_blank: true }
+  validates :url,                length: { within: 9..254, allow_blank: true }
   validates :body,            presence: true,
                                         length: { within: 3..1024 }
 
