@@ -197,6 +197,10 @@ class CommentTest < ActiveSupport::TestCase
 
   # scopes
   ################################
+  test 'default scope should be order created_at DESC' do
+    assert fail
+  end
+
   test 'should respond to .unapproved scope' do
     assert_respond_to Comment, :unapproved, "Did not respond to the unapproved scope."
   end

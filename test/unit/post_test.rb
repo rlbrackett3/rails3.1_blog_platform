@@ -147,6 +147,10 @@ class PostTest < ActiveSupport::TestCase
 
   # scopes
   ################################
+  test 'default scope should be order created_at DESC' do
+    assert fail
+  end
+
   test 'should respond to .drafts scope' do
     assert_respond_to Post, :drafts, "Did not respond to the drafts scope."
   end

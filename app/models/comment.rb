@@ -26,6 +26,7 @@ class Comment < ActiveRecord::Base
                                         length: { within: 3..1024 }
 
   # Scopes
+  default_scope order('created_at DESC')
   scope :unapproved, where(state: 'unapproved')
   scope :approved, where(state: 'approved')
 
