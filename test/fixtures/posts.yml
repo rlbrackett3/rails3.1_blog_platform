@@ -12,6 +12,7 @@ valid:
   title: The Title.
   body: The Body Text.
   admin: foo # loaded from admin.fixtures
+  state: published
 
 draft:
   title: Draft Title.

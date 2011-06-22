@@ -4,10 +4,17 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
+valid:
+  name: 'Guy'
+  email: 'guy@opinion.com'
+  url: 'http://www.opinion.com'
+  body: 'Some opinionated stuff.'
+  post: valid #loaded from post fixture
+
+no_post: {}
+#  column: value
+
+no_email: {}
 #  column: value
 
 # == Schema Information

@@ -4,6 +4,19 @@ class Comment < ActiveRecord::Base
   belongs_to :post, dependent: :destroy
 
   # Validations
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  name_regex = /[a-zA-Z0-9_ ]/i
+  # url_regex = \b((ftp|https?)://[-\w]+(\.\w[-\w]*)+ | (?i: [a-z0-9] (?:[-a-z0-9]*[a-z0-9])? \. )+(?-i: com\b | edu\b | biz\b | gov\b | in(?:t|fo)\b | mil\b | net\b | org\b | [a-z][a-z]\b ))( : \d+ )?)/[^.!,?;<>()\[\]{}\s\x7F-\xFF]*(?:[.!,?]+  [^.!,?;<>()\[\]{}\s\x7F-\xFF]+)*)?
+
+  validates :name,           presence: true,
+                                        length: { within: 3..60 },
+                                        format: name_regex
+  validates :email,           presence: true,
+                                        length: { within: 5..120 },
+                                        format: email_regex
+  validates :url,               length: { within: 9..254, allow_blank: true }
+  validates :body,            presence: true,
+                                        length: { within: 3..1024 }
 
 end
 
