@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 
   belongs_to :admin
   has_many :comments, dependent: :destroy
+  has_many :sections, dependent: :destroy
 
   # States and Transitions with state_machine gem
   state_machine :initial => :initial do
