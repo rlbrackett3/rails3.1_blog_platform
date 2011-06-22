@@ -29,10 +29,17 @@ class Post < ActiveRecord::Base
   # validates :published_at,  presence: true, allow_nil: true
   # validates :admin_id,   presence: true
   validates_associated :admin
+  validate :published_at_is_valid_datetime #not tested yet
 
   # # scopes
   scope :drafts, where(state: 'draft')
   scope :published, where(state: 'published')
+
+private
+  # possible work aroudn for validating datetime, not tested yet
+  def published_at_is_valid_datetime
+    errors.add(:published_at, 'must be a valid datetime') if ((DateTime.parse(happened_at) rescue ArgumentError) == ArgumentError)
+  end
 
 end
 
