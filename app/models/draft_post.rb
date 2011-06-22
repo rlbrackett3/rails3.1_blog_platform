@@ -1,0 +1,3 @@
+class DraftPost < Post
+
+end

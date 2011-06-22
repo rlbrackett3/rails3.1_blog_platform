@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  # self.abstract = true
+
   attr_accessible :title, :body, :admin_id
 
   belongs_to :admin

@@ -32,6 +32,10 @@ gem 'unicorn'
 # Deploy with Capistrano
 gem 'capistrano'
 
+# State Machine for handling post states
+gem 'state_machine'
+gem 'ruby-graphviz', :require => 'graphviz'
+
 # To use debugger
 gem 'ruby-debug19', :require => 'ruby-debug'
 
