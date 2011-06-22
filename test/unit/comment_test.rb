@@ -129,6 +129,7 @@ class CommentTest < ActiveSupport::TestCase
     end
   end
   ################################
+
   # body
   ################################
   test 'body should be shorter than 3 characters' do
@@ -193,6 +194,14 @@ class CommentTest < ActiveSupport::TestCase
   #   # assert_not_equal c.state, "unapproved", "Transitioned state from approved to unapproved."
   #   assert_equal c.state, "approved", "State changed from approved."
   # end
+  ################################
+
+  # associations
+  ################################
+  test 'associated: should not save valid comment without a post.' do
+    comment = Comment.create name: "foo", email: "foo@bar.com", body: "foobar"
+    assert !comment.valid?, "Saved invalid comment without a post."
+  end
   ################################
 
   # scopes

@@ -3,13 +3,12 @@ require 'test_helper'
 class PostTest < ActiveSupport::TestCase
 
   def setup
-    admin = admins :foo
-    @post = Post.create(title: "foo", body: "bar")
-    @post.admin = admin
-    @post.save
+    @post = posts(:valid)
     @admin = admins(:foo)
   end
+
   # valid post data
+  ################################
   test 'check that data is valid' do
     post = Post.new
 
@@ -33,8 +32,10 @@ class PostTest < ActiveSupport::TestCase
     assert_equal post.body, "Some body text."
     assert_equal post.admin_id, admin_id
   end
+  ################################
 
   # responding to attrs and methods
+  ################################
   test 'should respond to title' do
     assert @post.title, "Post does not respond to title."
   end
@@ -63,8 +64,10 @@ class PostTest < ActiveSupport::TestCase
   test 'should respond to admin association' do
     assert @post.admin_id, "Post does not respond and admin assoc."
   end
+  ################################
 
   # accessible attr
+  ################################
   # i am not sure about this stuff
   test 'should have an accessible title attr' do
     !assert_protected_attribute Post, :title
@@ -73,9 +76,10 @@ class PostTest < ActiveSupport::TestCase
   test 'should have an accessible body attr' do
     !assert_protected_attribute Post, :body
   end
+  ################################
 
-  # protected attr
-
+  # attr protected
+  ################################
   test 'should have a protected id attr' do
     assert_protected_attribute Post, :id
   end
@@ -87,72 +91,61 @@ class PostTest < ActiveSupport::TestCase
   test 'should have a protected created_at attr' do
     assert_protected_attribute Post, :updated_at
   end
+  ################################
 
   # validations
   test 'should create a valid post' do
-    post = Post.create(title: "title", body: "Some text.")
+    admin = admins(:foo)
+    post = Post.create(title: "title", body: "Some text.", admin_id: admin.id)
     assert post, "Failed to create a valid post."
   end
 
-  # title validations
-  test 'should not create a post without a title' do
+  # title
+  ################################
+  test 'title: should not create a post without a title' do
     post = Post.new(title: "", body: "foobar")
     assert !post.save, "Created an invalid post with no title."
   end
 
-  test 'should not create a post with title longer than 200 characters' do
+  test 'title: should not create a post with title longer than 200 characters' do
     long_title = "A" * 201
     post = Post.new(title: long_title, body: "foobar")
     assert !post.save, "Created an invalid post with a long (255char) title."
   end
+  ################################
 
-  # body validations
-  test 'should not create a post without a body' do
+  # body
+  ################################
+  test 'body: should not create a post without a body' do
     post = Post.new(title: "foo", body: "")
     assert !post.save, "Created an invalid post with no body."
   end
-
-  # Associations
-  test 'check admin user assocaitions' do
-    # retrieve admin from fixtures
-    admin = admins(:foo)
-
-    # create post without an association
-    post = Post.create(title: "foo", body: "bar")
-
-    assert !post.save, "Saved post without admin association."
-
-    post.admin = admin
-
-    assert post.save, "Unable to save post with admin association."
-    post.save
-    assert_equal post.admin.id, admin.id, "Failed to create valid post with admin association."
-  end
+  ################################
 
   # publsihed_at
   ################################
-  test 'should accept valid datetime for published_at' do
+  test 'published_at: should accept valid datetime for published_at' do
     assert flunk
   end
 
-  test 'should not accept invalid datetime for published_at' do
+  test 'published_at: should not accept invalid datetime for published_at' do
     assert flunk
   end
   ################################
 
   # states
   ################################
-  test 'should have a default state of "initial"' do
-    post = Post.create(title: 'foo', body: 'bar', admin_id: @admin.id)
-    assert_equal post.state, "initial", "Create post without a state."
+  test 'state: should have a default state of "initial"' do
+    # post = Post.create(title: 'foo', body: 'bar', admin_id: @admin.id)
+    assert_equal @post.state, "initial", "Create post without a state."
   end
 
-  test 'should not accept undefined states' do
+  test 'state: should not accept undefined states' do
     @post.state = "invalid_state"
     assert !@post.save, "Updated a post with invalid state"
   end
 
-  test 'should accept valid states' do
+  test 'state: should accept valid states' do
     @post.state = "published"
     assert @post.save, "Unable to updated a post with 'published' state"
 
@@ -161,27 +154,31 @@ class PostTest < ActiveSupport::TestCase
   end
   ################################
 
+  # associations
+  ################################
+  test 'associated: should not save valid post without an admin.' do
+    post = Post.create(title: "foo", body: "bar")
+    assert !post.valid?, "Saved post without a valid admin."
+  end
+  ################################
+
   # scopes
   ################################
-  test 'should respond to .drafts scope' do
+  test 'draft scope: should respond to .drafts scope' do
     assert_respond_to Post, :drafts, "Did not respond to the drafts scope."
   end
 
-  test 'drafts scope should include draft posts' do
-    draft_post = Post.create(title: "foo draft", body: "foobars")
-    draft_post.state = "draft"
-    draft_post.save
+  test 'drafts scope: should include draft posts' do
+    draft_post = posts(:draft)
     assert_includes Post.drafts, draft_post, "Does not contain the draft post."
   end
 
-  test 'should respond to .;published scope' do
+  test 'published scope: should respond to .;published scope' do
     assert_respond_to Post, :published, "Did not respond to the published scope."
   end
 
-  test 'published scope should include published posts' do
-    published_post = Post.create(title: "foo published", body: "foobars")
-    published_post.state = "published"
-    published_post.save
+  test 'published scope: should include published posts' do
+    published_post = posts(:published)
     assert_includes Post.published, published_post, "Does not contain the published post."
   end
 

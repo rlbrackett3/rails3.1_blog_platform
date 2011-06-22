@@ -12,7 +12,8 @@ class Comment < ActiveRecord::Base
   end
 
   # Validations
-  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  # email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   name_regex = /[a-zA-Z0-9_ ]/i
   # url_regex = \b((ftp|https?)://[-\w]+(\.\w[-\w]*)+ | (?i: [a-z0-9] (?:[-a-z0-9]*[a-z0-9])? \. )+(?-i: com\b | edu\b | biz\b | gov\b | in(?:t|fo)\b | mil\b | net\b | org\b | [a-z][a-z]\b ))( : \d+ )?)/[^.!,?;<>()\[\]{}\s\x7F-\xFF]*(?:[.!,?]+  [^.!,?;<>()\[\]{}\s\x7F-\xFF]+)*)?
 
