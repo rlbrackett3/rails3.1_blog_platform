@@ -25,6 +25,10 @@ class Comment < ActiveRecord::Base
   validates :body,            presence: true,
                                         length: { within: 3..1024 }
 
+  # Scopes
+  scope :unapproved, where(state: 'unapproved')
+  scope :approved, where(state: 'approved')
+
 end
 
 
