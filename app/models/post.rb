@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   attr_accessible :title, :body, :state, :published_at, :admin_id #protect the admin id
 
   belongs_to :admin
+  has_many :comments, dependent: :destroy
 
   # States and Transitions with state_machine gem
   state_machine :initial => :initial do

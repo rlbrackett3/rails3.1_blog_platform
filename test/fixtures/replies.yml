@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  body: MyString
+
+two:
+  body: MyString
+
+
+
+# == Schema Information
+#
+# Table name: replies
+#
+#  id         :integer         not null, primary key
+#  body       :text
+#  comment_id :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+

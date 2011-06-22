@@ -63,8 +63,9 @@ group :development do
   gem 'annotate'
   # Ryan Bates nifty generators
   gem 'nifty-generators'
-  # haml support for rails
+  # haml and sass support for rails
   gem 'haml-rails'
+  gem 'sass-rails'
 end
 
 # gems used in testing and development

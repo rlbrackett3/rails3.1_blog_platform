@@ -11,6 +11,8 @@ module Blog
     config.autoload_paths << "#{config.root}/lib"
     config.generators do |g|
       g.template_engine :haml
+      g.stylesheet_engine :SCSS
+      g.javascript_engine :coffee
       # g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
     # Settings in config/environments/* take precedence over those specified here.
@@ -55,5 +57,7 @@ module Blog
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    # config.generators.stylesheet_engine = :scss
+    # config.sass.syntax = :scss
   end
 end

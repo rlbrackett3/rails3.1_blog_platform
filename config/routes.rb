@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
 
+  resources :replies
+
   resources :comments
 
   match 'admin/edit' => 'admins#edit', :as => :edit_current_admin
