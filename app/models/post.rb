@@ -1,18 +1,18 @@
 class Post < ActiveRecord::Base
   # self.abstract = true
 
-  attr_accessible :title, :body, :admin_id
+  attr_accessible :title, :body, :admin_id, :state
 
   belongs_to :admin
 
   # States
-  state_machine :initial => :draft do
+  state_machine :initial => :initial do
     event :preview do
       transition :draft => :preview
     end
 
     event :draft do
-      transition :preview => :draft
+      transition all => :draft
     end
 
     event :published do

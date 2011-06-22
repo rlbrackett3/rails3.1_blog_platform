@@ -4,9 +4,10 @@ class PostTest < ActiveSupport::TestCase
 
   def setup
     admin = admins :foo
-    @post = Post.create(title: "foo", body: "bar", )
+    @post = Post.create(title: "foo", body: "bar")
     @post.admin = admin
     @post.save
+    @admin = admins(:foo)
   end
   # valid post data
   test 'check that data is valid' do
@@ -111,8 +112,8 @@ class PostTest < ActiveSupport::TestCase
     # retrieve admin from fixtures
     admin = admins(:foo)
 
-    # create post with association
-    post = Post.create(title: "foo", body: "bar",)
+    # create post without an association
+    post = Post.create(title: "foo", body: "bar")
 
     assert !post.save, "Saved post without admin association."
 
@@ -122,6 +123,26 @@ class PostTest < ActiveSupport::TestCase
     post.save
     assert_equal post.admin.id, admin.id, "Failed to create valid post with admin association."
   end
+
+  # States
+  test 'should have a default state of "initial"' do
+    post = Post.create(title: 'foo', body: 'bar', admin_id: @admin.id)
+    assert_equal post.state, "initial", "Create post without a state."
+  end
+
+  test 'should not accept undefined states' do
+    @post.state = "invalid_state"
+    assert !@post.save, "Updated a post with invalid state"
+  end
+
+  test 'should accept valid states' do
+    @post.state = "published"
+    assert @post.save, "Unable to updated a post with 'published' state"
+
+    @post.state = "draft"
+    assert @post.save, "Unable to updated a post with 'draft' state"
+  end
+
 
 end
 
