@@ -1,9 +1,7 @@
 Blog::Application.routes.draw do
 
-  resources :replies
-
-  resources :comments
-
+  # autentication routes
+  ################################
   match 'admin/edit' => 'admins#edit', :as => :edit_current_admin
   # match 'signup' => 'admins#new', :as => :signup # no signing up as an admin :)
   match 'logout' => 'sessions#destroy', :as => :logout
@@ -11,6 +9,10 @@ Blog::Application.routes.draw do
 
   resources :sessions, only: [ :new, :create, :destroy]
   resources :admins, only: [ :edit, :update ]
+  ################################
+
+  resources :replies
+  resources :comments
 
   resources :draft_posts, only: [ :index, :show ]
   resources :posts

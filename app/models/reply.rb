@@ -10,6 +10,9 @@ class Reply < ActiveRecord::Base
   validates :admin_id,        presence: true
   validates :comment_id,   presence: true
 
+  # Scopes
+  default_scope order('created_at DESC') # test
+
 end
 
 

@@ -4,8 +4,9 @@
 
 # Comments and Replies
 *implement reply system for comments
-  *test reply model
   *test reply controller
+*restrict reply new create edit update destroy to logged in admin
+*restrict comment edit update destroy actions to logged in admin
 
 *implement image uploading, storage, and posting feature
 

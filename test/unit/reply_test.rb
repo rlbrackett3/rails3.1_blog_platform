@@ -104,6 +104,13 @@ class ReplyTest < ActiveSupport::TestCase
   ################################
 
   ################################
+
+  # scopes
+  ################################
+  test 'default scope should be order created_at DESC' do
+    assert flunk
+  end
+  ################################
 end
 
 
