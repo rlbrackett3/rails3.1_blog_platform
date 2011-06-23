@@ -26,6 +26,7 @@ class Comment < ActiveRecord::Base
   validates :url,                length: { within: 9..254, allow_blank: true }
   validates :body,            presence: true,
                                         length: { within: 3..1024 }
+  validates :post_id,        presence: true#, on: :create
 
   # Scopes
   default_scope order('created_at DESC') # test

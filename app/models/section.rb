@@ -1,5 +1,13 @@
 class Section < ActiveRecord::Base
   attr_accessible :body, :position
+
+  belongs_to :post
+
+  # Validations
+  validates :body,               length: { within: 3..4096, allow_blank: true }
+  validates :position,          presence: true, on: :create
+  validates :post_id,           presence: true
+
 end
 
 # == Schema Information

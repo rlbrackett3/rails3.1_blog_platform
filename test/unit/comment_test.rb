@@ -81,21 +81,21 @@ class CommentTest < ActiveSupport::TestCase
   # attr data validations
   # name
   ################################
-  test 'name should be shorter than 3 characters' do
+  test 'name: should be shorter than 3 characters' do
     short_name = "a" * 2
     @comment.name = short_name
 
     assert !@comment.valid?, "Saved a comment with a short name."
   end
 
-  test 'name should not be longer than 60 characters' do
+  test 'name: should not be longer than 60 characters' do
     long_name = "a" * 61
     @comment.name = long_name
 
     assert !@comment.valid?, "Saved a comment with a long name."
   end
 
-  test 'name should not contain invalid characters' do
+  test 'name: should not contain invalid characters' do
     invalid_chars = %w[  ! @ # $ % ^ & * ( ) + = - . , / \ | < > * ~ ` " ' : ; ' [ ] ]
     invalid_chars.each do |char|
       @comment.name = "name_" + char
@@ -106,21 +106,21 @@ class CommentTest < ActiveSupport::TestCase
 
   # email
   ################################
-  test 'email should be shorter than 5 characters' do
+  test 'email: should be shorter than 5 characters' do
     short_email = "a" * 4
     @comment.email = short_email
 
     assert !@comment.valid?, "Saved a comment with a short email."
   end
 
-  test 'email should not be longer than 120 characters' do
+  test 'email: should not be longer than 120 characters' do
     long_email = "a" * 121
     @comment.email = long_email
 
     assert !@comment.valid?, "Saved a comment with a long email."
   end
 
-  test 'email should reject invalid emails' do
+  test 'email: should reject invalid emails' do
     email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     invalid_emails = %w[user@foo,com user_at_foo.org example.user@foo user.com user@foocom user@foo]
     invalid_emails.each do |email|
@@ -132,14 +132,14 @@ class CommentTest < ActiveSupport::TestCase
 
   # body
   ################################
-  test 'body should be shorter than 3 characters' do
+  test 'body: should be shorter than 3 characters' do
     short_body = "a" * 2
     @comment.body = short_body
 
     assert !@comment.valid?, "Saved a comment with a short body."
   end
 
-  test 'body should not be longer than 1024 characters' do
+  test 'body: should not be longer than 1024 characters' do
     long_body = "a" * 1025
     @comment.body = long_body
 
@@ -149,21 +149,21 @@ class CommentTest < ActiveSupport::TestCase
 
   # url
   ################################
-  test 'url should be shorter than 9 characters' do
+  test 'url: should be shorter than 9 characters' do
     short_url = "a" * 8
     @comment.url = short_url
 
     assert !@comment.valid?, "Saved a comment with a short url."
   end
 
-  test 'url should not be longer than 254 characters' do
+  test 'url: should not be longer than 254 characters' do
     long_url = "a" * 255
     @comment.url = long_url
 
     assert !@comment.valid?, "Saved a comment with a long url."
   end
 
-  test 'url should allow a blank url' do
+  test 'url: should allow a blank url' do
     @comment.url = ""
     assert @comment.valid?, "Unable to save comment without a url"
   end
@@ -171,17 +171,17 @@ class CommentTest < ActiveSupport::TestCase
 
   # state
   ################################
-  test 'state should be set to "unapproved" on create' do
+  test 'state: should be set to "unapproved" on create' do
     c = Comment.new
     assert_equal c.state, "unapproved", "Failed to set initial state."
   end
 
-  test 'state should transition to "approved"' do
+  test 'state: should transition to "approved"' do
     @comment.state = "approved"
     assert_equal @comment.state, "approved", "Unable to transition state to 'approved'"
   end
 
-  test 'state should not accept an invalid state' do
+  test 'state: should not accept an invalid state' do
     c = comments(:approved)
     c.state = "invalid_state"
     assert !c.valid?, "Changed state to an invaild state."
@@ -215,7 +215,7 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   test 'unapproved scope should include unapproved comments' do
-    unapproved_comment = Comment.create(name: "foob", email: "foo@bar.com", url: "", body: "foobars")
+    unapproved_comment = comments :valid
     assert_includes Comment.unapproved, unapproved_comment, "Does not contain the unapproved comment."
   end
 
@@ -224,9 +224,7 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   test 'approved scope should include approved comments' do
-    approved_comment = Comment.create(name: "foob", email: "foo@bar.com", url: "", body: "foobars")
-    approved_comment.state = "approved"
-    approved_comment.save
+    approved_comment = comments :approved
     assert_includes Comment.approved, approved_comment, "Does not contain the approved comment."
   end
   ################################

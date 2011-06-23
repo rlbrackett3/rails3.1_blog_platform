@@ -1,12 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
-one:
-  body: MyText
+text:
+  body: Text Section Body
   position: 1
+  post: valid
 
-two:
-  body: MyText
-  position: 1
+#photo:
+  #photo: assets/image/rails.png
+  #position: 0
 
 # == Schema Information
 #

@@ -43,27 +43,27 @@ class ReplyTest < ActiveSupport::TestCase
   # respond to attr methods
   ################################
   test 'should respond to body' do
-    assert replies(:valid).body, "Comment does not respond to body."
+    assert replies(:valid).body, "Reply does not respond to body."
   end
 
   test 'should respond to created_at' do
-    assert replies(:valid).created_at, "Comment does not respond to created_at."
+    assert replies(:valid).created_at, "Reply does not respond to created_at."
   end
 
   test 'should respond to updated_at' do
-    assert replies(:valid).updated_at, "Comment does not respond to updated_at."
+    assert replies(:valid).updated_at, "Reply does not respond to updated_at."
   end
 
   test 'should respond to comment_id' do
-    assert replies(:valid).comment_id, "Comment does not respond to comment_id."
+    assert replies(:valid).comment_id, "Reply does not respond to comment_id."
   end
 
   test 'should respond to id' do
-    assert replies(:valid).id, "Comment does not respond to id."
+    assert replies(:valid).id, "Reply does not respond to id."
   end
 
   test 'should respond to admin_id' do
-    assert replies(:valid).admin_id, "Comment does not respond to admin_id."
+    assert replies(:valid).admin_id, "Reply does not respond to admin_id."
   end
   ################################
 
