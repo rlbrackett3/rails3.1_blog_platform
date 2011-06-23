@@ -34,8 +34,6 @@ published:
   admin: foo # loaded from admin.fixtures
 
 
-
-
 # == Schema Information
 #
 # Table name: posts

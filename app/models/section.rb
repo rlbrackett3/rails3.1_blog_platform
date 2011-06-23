@@ -2,6 +2,7 @@ class Section < ActiveRecord::Base
   attr_accessible :body, :position
 
   belongs_to :post
+  has_many  :photos
 
   # Validations
   validates :body,               length: { within: 3..4096, allow_blank: true }

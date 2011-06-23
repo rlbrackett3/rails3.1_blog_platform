@@ -70,7 +70,7 @@ class SectionTest < ActiveSupport::TestCase
   #   assert !section.save, "Created an invalid post with no body."
   # end
 
-  test 'body: should be shorter than 3 characters' do
+  test 'body: should not be shorter than 3 characters' do
     short_body = "a" * 2
     @text_section.body = short_body
 
@@ -87,7 +87,7 @@ class SectionTest < ActiveSupport::TestCase
   test 'body: should create a valid section with a body' do
     section = Section.new body: "foobar"
     section.post_id = @post.id
-    assert section.save, "Created an invalid post with no body."
+    assert section.save, "Created an invalid Section with no body."
   end
   ################################
 
@@ -114,7 +114,7 @@ class SectionTest < ActiveSupport::TestCase
 
   # associations
   ################################
-  test 'associated: should not create a valid section without a comment' do
+  test 'associated: should not create a valid Section without a Post' do
     section = Section.create body: "foobar", post_id: @post.id
     assert !section.valid?, "Saved an invalid Section without a Post."
   end

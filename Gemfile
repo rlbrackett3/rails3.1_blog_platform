@@ -15,10 +15,10 @@ gem 'jquery-rails'
 # friendly urls (slugging)
 # gem 'friendly_id'
 
-# storing images in amazon s3
-# gem 'carrierwave'
-# gem 'fog'
-# gem 'mini_magick'
+# storing images in amazon s3 with carrierwave
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick'
 
 # pagination
 # gem 'kaminari'

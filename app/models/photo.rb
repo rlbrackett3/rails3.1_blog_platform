@@ -2,15 +2,15 @@ class Photo < ActiveRecord::Base
   attr_accessible :title#, :image, :image_cache
 
   # Associations
-  # belongs_to :section
+  belongs_to :section
 
  # CarrierWave
   # mount_uploader :image, ImageUploader
 
   # Validations
-  # validates :title,             length: { within: 3..254, allow_blank: true }
+  validates :title,             length: { within: 3..254, allow_blank: true }
   # validates :image,         presence: true
-  # validates :section_id    presence: true, on: :create
+  validates :section_id,   presence: true, on: :create
 
   # Callbacks
   # before_validation :save_dimensions, :save_orientation
