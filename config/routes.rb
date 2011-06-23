@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
 
+  resources :photos
+
   # autentication routes
   ################################
   match 'admin/edit' => 'admins#edit', :as => :edit_current_admin
