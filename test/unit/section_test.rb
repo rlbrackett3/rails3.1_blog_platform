@@ -120,9 +120,27 @@ class SectionTest < ActiveSupport::TestCase
   end
   ################################
 
-  # tests
+  # photos
   ################################
 
+  ################################
+
+  # scopes
+  ################################
+  test 'scope_forward: should respond to "forward" scope' do
+    assert_respond_to Section, :forward, "Failed to respond to 'forward' scope"
+  end
+
+  test 'scope_forward: should order sections by position' do
+    post = posts :valid
+
+    s1 = post.sections.create body: "barfoo", position: 1
+    s0 = post.sections.create body: "foobar"
+    s2 = post.sections.create body: "foofoo", position: 2
+
+    assert_equal Section.forward.first, s0, "Section with position 0 is not first."
+    assert_equal Section.forward.last, s2, "Section with position 2 is not last."
+  end
   ################################
 
   # tests

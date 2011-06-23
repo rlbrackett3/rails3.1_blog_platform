@@ -8,6 +8,9 @@ class Section < ActiveRecord::Base
   validates :position,          presence: true, on: :create
   validates :post_id,           presence: true
 
+  #scopes
+  scope :forward, order('position ASC')
+
 end
 
 # == Schema Information
