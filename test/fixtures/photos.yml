@@ -1,15 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  width: 1
-  height: 1
-  orientation: MyString
-  section: 
+  title: Landscape
+  width: 640
+  height: 480
+  orientation: landscape
+  section: valid
 
 two:
-  title: MyString
-  width: 1
-  height: 1
-  orientation: MyString
-  section: 
+  title: Portrait
+  width: 480
+  height: 640
+  orientation: portrait
+  section: valid
+
+valid:
+  title: Photo Title
+  width: 640
+  height: 480
+  orientation: landscape
+  section: valid

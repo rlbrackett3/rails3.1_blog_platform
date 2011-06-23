@@ -5,7 +5,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.integer :width
       t.integer :height
       t.string :orientation
-      t.reference :section
+      t.references :section
 
       t.timestamps
     end
