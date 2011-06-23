@@ -94,8 +94,9 @@ class PhotoTest < ActiveSupport::TestCase
     assert !photo.save, "Saved a photo without an image file."
   end
 
-  test 'image: should success when an image file is assigned' do
+  test 'image: should be success when an image file is assigned' do
     photo = @section.photos.create title: "foobar", image_filename: "test.jpg"
+    photo.save
     assert_equal photo.image.current_path, (Rails.public_path + "/uploads/photo/image/#{photo.id}/test.jpg")
   end
   ################################
